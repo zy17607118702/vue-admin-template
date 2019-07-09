@@ -4,7 +4,7 @@
 		<header>
 			<div class="left-menu">
 				<svg-icon icon-class="logo1" />
-				<span class="title"><img src="../../assets/logo_iMes.png"  style="margin-top:10px"/></span>
+				<span class="title">我的世界，我的dota</span>
 			</div>
 			<div class="right-menu">
 				<span class="title">{{baseName}}</span>
@@ -212,7 +212,7 @@
 		width: 100%;
 		height: 50px;
 		// background: #282a3b;//4.30上线颜色变更
-		background: #17479f;
+		background: #626366;
 		.left-menu {
 			display: flex;
 			align-items: center;
@@ -268,7 +268,7 @@
 					right: 0;
 					left: 0;
 					// background: #191d21;//4.30上线颜色变更
-					background: #373d47; //4.30上线颜色变更
+					background: #494a4b; //4.30上线颜色变更
 					z-index: 9999;
 					display: none;
 					span {
