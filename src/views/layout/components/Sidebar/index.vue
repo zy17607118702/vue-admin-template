@@ -118,7 +118,7 @@
 					let obj = {
 						name: item.resNameC,
 						seqNo: item.seqNo,
-						path: item.resourcePath,
+						path: item.resPath,
 						subList: []
 					}
 					if(item.resources && item.resources.length > 0) {
