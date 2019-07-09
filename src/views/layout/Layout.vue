@@ -3,8 +3,8 @@
 		<!--头部 start-->
 		<header>
 			<div class="left-menu">
-				<svg-icon icon-class="favicon.ico" />
-				<!--<span class="title"><img src="../../../favicon.ico"  style="margin-top:10px"/></span> -->
+				<svg-icon icon-class="logo1" />
+				<span class="title"><img src="../../assets/logo_iMes.png"  style="margin-top:10px"/></span>
 			</div>
 			<div class="right-menu">
 				<span class="title">{{baseName}}</span>
@@ -212,7 +212,7 @@
 		width: 100%;
 		height: 50px;
 		// background: #282a3b;//4.30上线颜色变更
-		background: #8e9290;
+		background: #17479f;
 		.left-menu {
 			display: flex;
 			align-items: center;
@@ -286,7 +286,8 @@
 						cursor: pointer;
 					}
 					span:hover {
-						color: #40ffcf;
+						//zjl add
+						color: #409eff;
 					}
 					span:last-child {
 						border-top: 1px solid #696767;

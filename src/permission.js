@@ -25,6 +25,7 @@ router.beforeEach((to, from, next) => {
 			if(!getRouter) {
 				sidebarApi.getResources().then(res => {
 					if(res.length > 0 && res[0]) {
+						debugger
 						getRouter = res[0].resources; //后台拿到路由
 						promissionRouter.routerGo(to, next); //执行路由跳转方法
 					} else {
@@ -36,6 +37,7 @@ router.beforeEach((to, from, next) => {
 					}
 
 				}).catch(err => {
+					debugger
 					Message({
 						type: 'warning',
 						message: '获取用户权限失败.'
@@ -75,14 +77,14 @@ let promissionRouter = {
 		let routerArr = [];
 		router.forEach(item => {
 			routerArr.push({
-				path: item.resourcePath,
+				path: item.resPath,
 				component: () =>
-					import(`@/views${item.resourcePath}`),
+					import(`@/views${item.resPath}`),
 				//				redirect: '/index',
-				name: item.resDesc,
+				name: item.resNameC,
 				meta: {
-					title: item.resName,
-					secondRouter: item.resDesc
+					title: item.resNameC,
+					secondRouter: item.resNameC
 				},
 			})
 		})
@@ -94,13 +96,13 @@ let promissionRouter = {
 		asyncRouterMap.forEach(item => {
 
 			let obj = {
-				path: item.resourcePath,
+				path: item.resPath,
 				component: () =>
 					import('@/views/layout/Layout'),
 				redirect: '/index',
-				name: item.resDesc,
+				name: item.resNameC,
 				meta: {
-					title: item.resName,
+					title: item.resNameC,
 					icon: 'yewu'
 				},
 				children: []
@@ -110,7 +112,7 @@ let promissionRouter = {
 				let subRouter = [];
 				item.resources.forEach(resources => {
 					if(resources.resources && resources.resources.length) {
-						let theRouter = promissionRouter.filterThrRouter(resources.resources, item.resourcePath);
+						let theRouter = promissionRouter.filterThrRouter(resources.resources, item.resPath);
 						subRouter = [...subRouter, ...theRouter]
 					}
 				})
