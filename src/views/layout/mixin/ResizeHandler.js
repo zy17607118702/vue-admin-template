@@ -1,7 +1,8 @@
 import store from '@/store'
 
 const { body } = document
-const WIDTH = 992 // refer to Bootstrap's responsive design
+const WIDTH = 1024
+const RATIO = 3
 
 export default {
   watch: {
@@ -12,6 +13,7 @@ export default {
     }
   },
   beforeMount() {
+    // 窗口大小改变监听 控制侧边栏显示方式
     window.addEventListener('resize', this.resizeHandler)
   },
   mounted() {
@@ -24,7 +26,7 @@ export default {
   methods: {
     isMobile() {
       const rect = body.getBoundingClientRect()
-      return rect.width - 1 < WIDTH
+      return rect.width - RATIO < WIDTH
     },
     resizeHandler() {
       if (!document.hidden) {
