@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305.74 74.2">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-size: 60px;
+        font-family: ArialRoundedMTBold, Arial Rounded MT Bold;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </defs>
+  <title>资源 1</title>
+  <g id="图层_2" data-name="图层 2">
+    <g id="图层_1-2" data-name="图层 1">
+      <path class="cls-1" d="M57.29,21.51a5.51,5.51,0,0,0,7.76,0l5.82-5.82a5.5,5.5,0,0,0,0-7.77L64.55,1.6a5.51,5.51,0,0,0-7.76,0L51,7.42a5.5,5.5,0,0,0,0,7.77Zm63.48,36.22L90.29,27.25a5.54,5.54,0,0,0-7.79,0L61.21,48.54,39.89,27.22a5.5,5.5,0,0,0-7.77,0h0l0,0L1.6,57.73a5.52,5.52,0,0,0,0,7.77l5.31,5.3a5.49,5.49,0,0,0,7.76,0L36,49.48l16,16,0,0,5.31,5.3a5.49,5.49,0,0,0,7.76,0l21.3-21.3,21.3,21.3a5.5,5.5,0,0,0,7.77,0l5.31-5.3a5.52,5.52,0,0,0,0-7.77"/>
+      <text class="cls-2" transform="translate(134 61.54) scale(1.09 1)">iMES</text>
+    </g>
+  </g>
+</svg>

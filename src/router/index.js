@@ -39,22 +39,22 @@ export const constantRouterMap = [{
 			import('@/views/404'),
 		hidden: true
 	},
-	// {
-	// 	path: '/',
-	// 	component: Layout,
-	// 	redirect: '/index',
-	// 	name: 'index',
-	// 	children: [{
-	// 		path: 'index',
-	// 		name: 'index',
-	// 		meta: {
-	// 			title: '首页',
-	// 			icon: 'table'
-	// 		},
-	// 		component: () =>
-	// 			import('@/views/index')
-	// 	}]
-	// },
+	 {
+	 	path: '/',
+	 	component: Layout,
+	 	redirect: '/index',
+	 	name: 'index',
+		children: [{
+	 		path: 'index',
+	 		name: 'index',
+	 		meta: {
+	 			title: '首页',
+	 			icon: 'table'
+	 		},
+	 		component: () =>
+	 			import('@/views/index')
+	 	}]
+	 },
 	// {
 	// 	path: '/jump',
 	// 	component: Layout,
@@ -118,11 +118,11 @@ export const constantRouterMap = [{
 	// 		},
 	// 	]
 	// },
-//	{
-//		path: '*',
-//		redirect: '/404',
-//		hidden: true
-//	}
+	{
+		path: '*',
+		redirect: '/404',
+		hidden: true
+	}
 ]
 
 const router = new Router({

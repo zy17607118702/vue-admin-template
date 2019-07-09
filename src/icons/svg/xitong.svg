@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_xitong@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="[交互]imes-web_1218" stroke="none" stroke-width="1">
+        <g id="1-1左侧导航-系统主数据" transform="translate(-27.000000, -153.000000)">
+            <g id="Group-4">
+                <g id="ic_xitong" transform="translate(25.000000, 151.000000)">
+                    <g id="ic_dash">
+                        <path d="M2.5,10.8333333 L9.16666667,10.8333333 L9.16666667,2.5 L2.5,2.5 L2.5,10.8333333 Z M2.5,17.5 L9.16666667,17.5 L9.16666667,12.5 L2.5,12.5 L2.5,17.5 Z M10.8333333,17.5 L17.5,17.5 L17.5,9.16666667 L10.8333333,9.16666667 L10.8333333,17.5 Z M10.8333333,2.5 L10.8333333,7.5 L17.5,7.5 L17.5,2.5 L10.8333333,2.5 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
