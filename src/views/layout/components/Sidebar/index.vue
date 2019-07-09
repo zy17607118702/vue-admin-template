@@ -40,7 +40,7 @@
 				api: sidebarApi,
 				menuList: [], // 菜单列表
 				dropMenuList: [], // 展开菜单列表
-				activeMenu: 'mainData', // 默认激活选项
+				activeMenu: 'index', // 默认激活选项
 				cols: 0,
 				gutter: 10
 			}
@@ -97,9 +97,9 @@
 				res.forEach(item => {
 					//遍历一级菜单
 					let obj = {
-						name: item.resName,
-						icon: this.matchIcon(item.resName),
-						sequenceNum: item.sequenceNum,
+						name: item.resNameC,
+						icon: this.matchIcon(item.resNameC),
+						seqNo: item.seqNo,
 						subList: []
 					}
 
@@ -109,24 +109,24 @@
 					}
 					this.menuList.push(obj);
 				});
-				this.menuList = this.sortInt(this.menuList, "sequenceNum");
+				this.menuList = this.sortInt(this.menuList, "seqNo");
 				this.dropMenuList = this.menuList[0].subList;
 			},
 			menuIterator(menu) {
 				let arr = [];
 				menu.forEach(item => {
 					let obj = {
-						name: item.resName,
-						sequenceNum: item.sequenceNum,
+						name: item.resNameC,
+						seqNo: item.seqNo,
 						path: item.resourcePath,
 						subList: []
 					}
 					if(item.resources && item.resources.length > 0) {
-						obj.subList = this.sortInt(this.menuIterator(item.resources), "sequenceNum");
+						obj.subList = this.sortInt(this.menuIterator(item.resources), "seqNo");
 					}
 					arr.push(obj);
 				});
-				arr = this.sortInt(arr, "sequenceNum");
+				arr = this.sortInt(arr, "seqNo");
 				return arr;
 			},
 			sortInt(data, key) {
@@ -205,7 +205,6 @@
 <style lang="scss">
 	.new-side-menu {
 		transition: all 0.28s cubic-bezier(0, 0, 0.2, 1);
-		// background: #282a3b;//4.30上线颜色变更
 		background: #373d47;
 		border: none;
 		list-style: none;

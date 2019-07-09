@@ -4,17 +4,23 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
-
+//引入全部sxss
 import '@/styles/index.scss' // global css
 
 import App from './App'
 import store from './store'
+import '@/icons' // icon
+import '@/permission' // permission control 进度条
 import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
-
+//elementui 国际化功能
+import i18n from './lang' // Internationalization
+Vue.use(ElementUI, { size: 'mini', i18n: (key, value) => i18n.t(key, value) })
+//瀑布流插件 用于侧边栏
+import VueMasonry from 'vue-masonry-css'
+Vue.use(VueMasonry)
 /**
  * This project originally used easy-mock to simulate data,
  * but its official service is very unstable,
@@ -25,7 +31,6 @@ import '@/permission' // permission control
  */
 import '../mock' // simulation data
 
-Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
 
@@ -33,5 +38,6 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n,//国际化
   render: h => h(App)
 })
