@@ -25,7 +25,6 @@ router.beforeEach((to, from, next) => {
 			if(!getRouter) {
 				sidebarApi.getResources().then(res => {
 					if(res.length > 0 && res[0]) {
-						debugger
 						getRouter = res[0].resources; //后台拿到路由
 						promissionRouter.routerGo(to, next); //执行路由跳转方法
 					} else {
@@ -37,7 +36,6 @@ router.beforeEach((to, from, next) => {
 					}
 
 				}).catch(err => {
-					debugger
 					Message({
 						type: 'warning',
 						message: '获取用户权限失败.'

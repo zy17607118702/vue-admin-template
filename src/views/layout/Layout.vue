@@ -60,7 +60,7 @@
 <script>
 	import { Sidebar, AppMain, TagsView } from './components'
 	import layoutApi from '@/api/layout'
-
+	import { getToken } from '@/utils/auth'
 	export default {
 		name: 'Layout',
 		data() {
@@ -113,6 +113,15 @@
 		},
 		created() {
 			this.userName = localStorage.getItem("userName")
+		},
+		mounted(){
+			if(getToken()=='undefined'){
+				this.$router.push({
+						path: '/login'
+					})
+					// 为了重新实例化vue-router对象 避免bug
+					location.reload()
+			}
 		},
 		methods: {
 			logOut() {
@@ -211,7 +220,7 @@
 		position: relative;
 		width: 100%;
 		height: 50px;
-		// background: #282a3b;//4.30上线颜色变更
+		// background: #282a3b;
 		background: #626366;
 		.left-menu {
 			display: flex;
@@ -258,7 +267,7 @@
 				}
 			}
 			.drop-button {
-				font-size: 13px; //zjl add
+				font-size: 13px; 
 				position: relative;
 				display: flex;
 				align-items: center;
@@ -267,14 +276,12 @@
 					top: 50px;
 					right: 0;
 					left: 0;
-					// background: #191d21;//4.30上线颜色变更
-					background: #494a4b; //4.30上线颜色变更
+					background: #494a4b; 
 					z-index: 9999;
 					display: none;
 					span {
 						svg {
-							//zjl add
-							width: 20px;
+							width: 0px;
 							margin-right: 5px;
 							height: 20px;
 						}
@@ -282,11 +289,10 @@
 						height: 40px;
 						line-height: 40px;
 						text-align: center;
-						align-items: center; //zjl add
+						align-items: center; 
 						cursor: pointer;
 					}
 					span:hover {
-						//zjl add
 						color: #409eff;
 					}
 					span:last-child {
@@ -295,7 +301,7 @@
 				}
 			}
 			.drop-button:hover {
-				background: #191d21; //4.30上线颜色变更
+				background: #191d21; 
 			}
 			.drop-button:hover .drop-menu {
 				display: block;
@@ -329,15 +335,15 @@
 <style lang="scss">
 	.el-pagination__editor {
 		.el-input__inner {
-			line-height: 28px; //zjl add
+			line-height: 28px; 
 		}
 	}
 	
 	header {
 		.right-menu {
 			.el-input {
-				margin-right: 50px; // zjl 10px
-				width: 130px; //zjl 180px
+				margin-right: 10px; // zjl 10px
+				width: 200px; //zjl 180px
 			}
 			.el-input__inner {
 				color: #fff;
@@ -350,13 +356,13 @@
 				transition: width 0.15s ease-in;
 			}
 			.el-input__inner:hover {
-				//zjl add
+				
 				border-color: #409eff;
 				width: 180px;
 				transition: width 0.15s ease-in;
 			}
 			.el-input__inner:focus {
-				//zjl add
+				
 				border-color: #409eff;
 				width: 180px;
 				background-color: #252a3f;

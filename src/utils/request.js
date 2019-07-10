@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 import store from '../store'
-import { getToken } from '@/utils/auth'
+import { getToken,removeToken } from '@/utils/auth'
 
 // 创建axios实例
 const service = axios.create({
@@ -62,13 +62,19 @@ service.interceptors.response.use(
         // }
     },
     error => {
-        console.log('err' + error) // for debug
-        Message({
-            message: error.response.data.message,
-            type: 'error',
-            duration: 5 * 1000
-        })
-        return Promise.reject(error)
+        if(error.response.status===50008){
+            removeToken()
+            return Promise.reject(error)
+        }else{
+            console.log('err' + error) // for debug
+            Message({
+                message: error.response.data.message,
+                type: 'error',
+                duration: 5 * 1000
+            })
+            return Promise.reject(error)
+        }
+
     }
 )
 
