@@ -5,8 +5,8 @@
       Describe：接收表格详细详细数据，返回表格修改后的数据
     -->
 	<div class="form-panel">
-		<div class="form-panel-item" v-for="(item, index) in tableColumns" :key="index" v-if='item.formShow'>
-
+	<template v-for="(item, index) in tableColumns">
+		<div class="form-panel-item"  :key="index" v-if='item.formShow'>
 			<el-form-item :label="item.label" :title="item.label" :prop="item.model" :rules="rules[item.rules]" :key="index">
 				<!--远程搜索下拉框-->
 				<el-select v-if="item.editType == 'remoteSelect'" v-model="dialogTemp[item.model]" filterable clearable remote :remote-method="item.remoteCb" :no-match-text="item.noSelectMatch ? item.noSelectMatch(item.label) : ''" :disabled="item.ifDisabled ? addOrUrdate : false" placeholder="请选择" @change="item.selectCb ? item.selectCb($event) : ''" size="mini">
@@ -40,6 +40,7 @@
 				</el-checkbox>
 			</el-form-item>
 		</div>
+	</template>
 	</div>
 </template>
 
