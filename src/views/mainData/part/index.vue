@@ -36,7 +36,8 @@
         <el-table v-loading="tableParams.listLoading" :data="tableParams.list" height="100%" element-loading-text="正在加载中..."
           fix stripe border highlight-current-row @selection-change="handleSelectionChange" @sort-change='handleTableSortChange'>
           <el-table-column type="selection" width="45" />
-          <el-table-column v-for="(column, index) in tableColumns" v-if="column.tableShow" :sortable="true" :key="index"
+          <template v-for="(column, index) in tableColumns" >
+          <el-table-column v-if="column.tableShow" :sortable="true" :key="index"
             :label="column.label" :prop="column.prop" min-width="120" align="left">
             <template slot-scope="scope">
               <span v-if="column.columnCb">
@@ -47,6 +48,7 @@
               </span>
             </template>
           </el-table-column>
+          </template>
           <el-table-column fixed="right" label="操作" width="100" header-align="center" align="center">
             <template slot-scope="scope">
               <el-button type="text" size="small" @click="handleView(scope.row)">查看</el-button>
@@ -73,12 +75,12 @@
 
 <script>
   import plantApi from '@/api/mainData/plant'
-  import YH from '@/mixins/YH0'
+  import baseCrud from '@/mixins/baseCrud'
   import FormDialog from "@/components/panel/formDialog"
 
   export default {
     name: 'plant',
-    mixins: [YH],
+    mixins: [baseCrud],
     components: {
       FormDialog
     },
