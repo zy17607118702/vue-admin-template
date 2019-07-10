@@ -1,7 +1,8 @@
 <template>
 	<el-dialog :title="title" ref="dialogFrom" :visible.sync="dialogVisible" width="770px" :before-close="handleClose">
 		<el-form class="form-panel-dialog" ref="dataForm" v-loading="formParams.loading" element-loading-text="数据加载中..." :model="dialogTemp" :rules="rules" :disabled="formParams.formDisabled" label-position="left" label-width="100px" size="mini">
-			<div class="form-panel-item" v-for="(item, index) in tableColumns" :key="index" v-if='item.formShow'>
+			<template v-for="(item, index) in tableColumns">
+			<div class="form-panel-item" :key="index" v-if='item.formShow'>
 				<el-form-item :label="item.label" :prop="item.model" :rules="rules[item.rules]" :key="index">
 					<!--远程搜索下拉框-->
 					<el-select v-if="item.editType == 'remoteSelect'" v-model="dialogTemp[item.model]" filterable clearable remote :remote-method="item.remoteCb" :no-match-text="item.noSelectMatch ? item.noSelectMatch(item.label) : ''" :disabled="item.ifDisabled ? addOrUrdate : false" placeholder="请选择" @change="item.selectCb ? item.selectCb($event) : ''" size="mini">
@@ -42,6 +43,7 @@
 					<!--上传图片-->
 				</el-form-item>
 			</div>
+			</template>
 		</el-form>
 
 		<div slot="footer" class="dialog-footer" align="center">
